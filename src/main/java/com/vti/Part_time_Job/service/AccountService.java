@@ -2,8 +2,15 @@ package com.vti.Part_time_Job.service;
 
 
 import com.vti.Part_time_Job.entity.Account;
+import com.vti.Part_time_Job.form.AccountFilterForm;
 import com.vti.Part_time_Job.repository.IAccountRepository;
+import com.vti.Part_time_Job.specification.AccountSpecification;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,8 +21,12 @@ public class AccountService implements  IAccountService {
     private IAccountRepository repository ;
 
     @Override
-    public List<Account> findAll(){
-        return repository.findAll() ;
+    public Page<Account> findAll(AccountFilterForm form , int pageNo, int pageSize, String sortBy, String sortDir){
+        Specification<Account> spec = AccountSpecification.buildSpec(form) ;
+        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
+                : Sort.by(sortBy).descending();
+        Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
+        return repository.findAll(spec , pageable) ;
     }
 
     @Override
@@ -42,4 +53,6 @@ public class AccountService implements  IAccountService {
     public void deleteAllById(List<Integer> ids) {
         repository.deleteAllById(ids);
     }
+
+
 }

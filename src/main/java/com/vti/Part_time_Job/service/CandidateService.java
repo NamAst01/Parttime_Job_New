@@ -6,6 +6,7 @@ import com.vti.Part_time_Job.form.CandidateFilterForm;
 import com.vti.Part_time_Job.repository.ICandidateRepository;
 import com.vti.Part_time_Job.specification.CandidateSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -21,8 +22,10 @@ public class CandidateService implements  ICandidateService {
     private ICandidateRepository repository ;
 
     @Override
-    public Page<Candidate> findAll(CandidateFilterForm form, Pageable pageable){
+    public Page<Candidate> findAll(CandidateFilterForm form, int pageNo, int pageSize, String sortBy, String sortDir){
         Specification<Candidate> spec = CandidateSpecification.buildSpec(form) ;
+        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending() :Sort.by(sortBy).descending() ;
+        Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
         return repository.findAll(spec,pageable) ;
     }
 
@@ -51,10 +54,5 @@ public class CandidateService implements  ICandidateService {
         repository.deleteAllById(ids);
     }
 
-    @Override
-    public Page<Candidate> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection) {
-        Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() : Sort.by(sortField).descending() ;
-        Pageable pageable = PageRequest.of(pageNo - 1, pageSize , sort);
-        return this.repository.findAll(pageable);
-    }
+
 }

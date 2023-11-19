@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public interface ICandidateService {
-    Page<Candidate> findAll(CandidateFilterForm form, Pageable pageable);
+    Page<Candidate> findAll(CandidateFilterForm form, int pageNo, int pageSize, String sortBy, String sortDir);
 
     Candidate findById(Integer id);
 
@@ -19,6 +19,5 @@ public interface ICandidateService {
     void deleteById(Integer id);
 
     void deleteAllById(List<Integer> ids);
-    Page< Candidate > findPaginated(int pageNo, int pageSize, String sortField, String sortDirection);
 
 }

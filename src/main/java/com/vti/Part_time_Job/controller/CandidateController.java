@@ -19,14 +19,14 @@ public class CandidateController  {
     private ICandidateService service ;
 
     @GetMapping()
-    public Page<Candidate> findAll(CandidateFilterForm form, Pageable pageable) {
-        return service.findAll(form, pageable) ;
+    public Page<Candidate> findAll(CandidateFilterForm form,
+                                   @RequestParam(value = "pageNo" ,defaultValue = "0", required = false) int pageNo,
+                                   @RequestParam(value = "pageSize" ,defaultValue = "10", required = false)int pageSize,
+                                   @RequestParam(value = "sortBy" ,defaultValue = "id", required = false)String sortBy,
+                                   @RequestParam(value = "sortDir" ,defaultValue = "asc", required = false)String sortDir) {
+        return service.findAll(form,  pageNo,  pageSize,  sortBy,  sortDir) ;
     }
-    @GetMapping("/page/{pageNo}")
-    public Page<Candidate> findPaginated(@PathVariable(value = "pageNo") int pageNo, @RequestParam(value = "sortField") String sortField, @RequestParam("sortDir") String sortDirection ) {
-        int pageSize = 5 ;
-        return service.findPaginated(pageNo,pageSize,sortField,sortDirection) ;
-    }
+
         @GetMapping("/{id}")
     public Candidate findById(@PathVariable("id") Integer id){
         return  service.findById(id) ;

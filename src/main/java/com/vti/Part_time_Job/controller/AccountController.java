@@ -1,8 +1,11 @@
 package com.vti.Part_time_Job.controller;
 
 import com.vti.Part_time_Job.entity.Account;
+import com.vti.Part_time_Job.form.AccountFilterForm;
 import com.vti.Part_time_Job.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,8 +18,13 @@ public class AccountController  {
     private IAccountService service ;
 
     @GetMapping()
-    public List<Account> findAll() {
-        return service.findAll() ;
+    public Page<Account> findAll(AccountFilterForm form,
+                                 @RequestParam(value = "pageNo", defaultValue = "0", required = false) int pageNo,
+                                 @RequestParam(value = "pageSize", defaultValue = "10", required = false) int pageSize,
+                                 @RequestParam(value = "sortBy", defaultValue = "id" , required = false) String sortBy,
+                                 @RequestParam(value = "sortDir", defaultValue = "asc", required = false) String sortDir
+    ) {
+        return service.findAll(form, pageNo,  pageSize,  sortBy,  sortDir) ;
     }
 
     @GetMapping("/{id}")
