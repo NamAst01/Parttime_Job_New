@@ -1,9 +1,11 @@
 package com.vti.Part_time_Job.controller;
 
 import com.vti.Part_time_Job.entity.Candidate;
+import com.vti.Part_time_Job.form.CandidateFilterForm;
 import com.vti.Part_time_Job.service.ICandidateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +19,8 @@ public class CandidateController  {
     private ICandidateService service ;
 
     @GetMapping()
-    public List<Candidate> findAll() {
-        return service.findAll() ;
+    public Page<Candidate> findAll(CandidateFilterForm form, Pageable pageable) {
+        return service.findAll(form, pageable) ;
     }
     @GetMapping("/page/{pageNo}")
     public Page<Candidate> findPaginated(@PathVariable(value = "pageNo") int pageNo, @RequestParam(value = "sortField") String sortField, @RequestParam("sortDir") String sortDirection ) {

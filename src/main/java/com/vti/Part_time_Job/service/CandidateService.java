@@ -2,12 +2,15 @@ package com.vti.Part_time_Job.service;
 
 
 import com.vti.Part_time_Job.entity.Candidate;
+import com.vti.Part_time_Job.form.CandidateFilterForm;
 import com.vti.Part_time_Job.repository.ICandidateRepository;
+import com.vti.Part_time_Job.specification.CandidateSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,8 +21,9 @@ public class CandidateService implements  ICandidateService {
     private ICandidateRepository repository ;
 
     @Override
-    public List<Candidate> findAll(){
-        return repository.findAll() ;
+    public Page<Candidate> findAll(CandidateFilterForm form, Pageable pageable){
+        Specification<Candidate> spec = CandidateSpecification.buildSpec(form) ;
+        return repository.findAll(spec,pageable) ;
     }
 
     @Override
