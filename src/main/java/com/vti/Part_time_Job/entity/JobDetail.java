@@ -54,7 +54,7 @@ public class JobDetail {
     @Column(name = "requirement")
     private String requirement ;
 
-    @Column(name = "status", length = 8, nullable = true)
+    @Column(name = "status", length = 10, nullable = true)
     @Enumerated(value = EnumType.STRING)
     private Status status ;
 

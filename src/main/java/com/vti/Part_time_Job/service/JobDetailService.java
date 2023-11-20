@@ -2,8 +2,15 @@ package com.vti.Part_time_Job.service;
 
 
 import com.vti.Part_time_Job.entity.JobDetail;
+import com.vti.Part_time_Job.form.JobDetailFilterForm;
 import com.vti.Part_time_Job.repository.IJobDetailRepository;
+import com.vti.Part_time_Job.specification.JobDetailSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,8 +21,11 @@ public class JobDetailService implements IJobDetailService {
     private IJobDetailRepository repository ;
 
     @Override
-    public List<JobDetail> findAll(){
-        return repository.findAll() ;
+    public Page<JobDetail> findAll(JobDetailFilterForm form , int pageNo, int pageSize, String sortBy, String sortDir){
+        Specification<JobDetail> spec = JobDetailSpecification.buildSpec(form) ;
+        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending() ;
+        Pageable pageable = PageRequest.of(pageNo, pageSize, sort) ;
+        return repository.findAll(spec, pageable) ;
     }
 
     @Override

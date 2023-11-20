@@ -38,3 +38,15 @@ p
 @src/main/java/com/vti/Part_time_Job/service/IAccountService.java,8/d/8df72c1e71f97bcd83165b3292d386931a6e8574
 u
 Esrc/main/java/com/vti/Part_time_Job/controller/AccountController.java,1/d/1dfff63e81cfc401aa9dac8d6b976700460b56ad
+w
+Gsrc/main/java/com/vti/Part_time_Job/controller/JobDetailController.java,a/6/a6badab920b96fea486ed971a0a90446c078ca63
+q
+Asrc/main/java/com/vti/Part_time_Job/form/JobDetailFilterForm.java,b/1/b11eaae2b6ac1219f9a6e458a3c028c07c178b42
+}
+Msrc/main/java/com/vti/Part_time_Job/specification/JobDetailSpecification.java,d/7/d72874882fd7a53a3c8f8532dabfe69a0fe1c1a3
+r
+Bsrc/main/java/com/vti/Part_time_Job/service/IJobDetailService.java,2/c/2cd24975c081ae070adedf8feb1c57faf5bb7018
+q
+Asrc/main/java/com/vti/Part_time_Job/service/JobDetailService.java,d/6/d6f3f0dc3db053c0e2b9526db69bd8d3058dcc42
+x
+Hsrc/main/java/com/vti/Part_time_Job/repository/IJobDetailRepository.java,4/2/420fb07ba4fcb1f54650142b74579ace165b939c
