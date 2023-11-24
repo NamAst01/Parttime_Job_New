@@ -1,12 +1,14 @@
 package com.vti.Part_time_Job.service;
 
 import com.vti.Part_time_Job.entity.Employer;
+import com.vti.Part_time_Job.form.EmployerFilterForm;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
 
 public interface IEmployerService {
-     List<Employer> findAll();
+     Page<Employer> findAll(EmployerFilterForm form , int pageSize , int pageNo , String sortBy, String sortDir );
 
      Employer findById(Integer id);
 

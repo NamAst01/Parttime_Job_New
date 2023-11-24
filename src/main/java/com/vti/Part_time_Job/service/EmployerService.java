@@ -2,8 +2,16 @@ package com.vti.Part_time_Job.service;
 
 
 import com.vti.Part_time_Job.entity.Employer;
+import com.vti.Part_time_Job.form.EmployerFilterForm;
 import com.vti.Part_time_Job.repository.IEmployerRepository;
+import com.vti.Part_time_Job.specification.CandidateSpecification;
+import com.vti.Part_time_Job.specification.EmployerSpecification;
+import org.springframework.data.domain.Sort;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,8 +22,11 @@ public class EmployerService implements  IEmployerService {
     private IEmployerRepository repository ;
 
     @Override
-    public List<Employer> findAll(){
-        return repository.findAll() ;
+    public Page<Employer> findAll(EmployerFilterForm form , int pageSize , int pageNo ,String sortBy, String sortDir ){
+        Specification<Employer> spec = EmployerSpecification.buildSpec(form) ;
+        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name())? Sort.by(sortBy).ascending() :Sort.by(sortBy).descending() ;
+        Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
+        return repository.findAll(spec, pageable) ;
     }
 
     @Override
