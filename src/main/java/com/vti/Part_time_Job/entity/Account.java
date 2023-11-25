@@ -51,8 +51,7 @@ public class Account {
     @Enumerated(value = EnumType.STRING)
     private Status status ;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "candidate_id", referencedColumnName = "id")
+    @OneToOne(mappedBy = "account",cascade = CascadeType.ALL)
     private Candidate candidate;
 
     @OneToOne(cascade = CascadeType.ALL)

@@ -1,8 +1,11 @@
 package com.vti.Part_time_Job.controller;
 
+import com.vti.Part_time_Job.dto.CandidateDto;
 import com.vti.Part_time_Job.entity.Candidate;
+import com.vti.Part_time_Job.form.CandidateCreateForm;
 import com.vti.Part_time_Job.form.CandidateFilterForm;
 import com.vti.Part_time_Job.service.ICandidateService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,6 +20,8 @@ public class CandidateController  {
 
     @Autowired
     private ICandidateService service ;
+    @Autowired
+    private ModelMapper mapper ;
 
     @GetMapping()
     public Page<Candidate> findAll(CandidateFilterForm form,
@@ -28,12 +33,12 @@ public class CandidateController  {
     }
 
         @GetMapping("/{id}")
-    public Candidate findById(@PathVariable("id") Integer id){
-        return  service.findById(id) ;
+    public CandidateDto findById(@PathVariable("id") Integer id){
+        return  mapper.map(service.findById(id) , CandidateDto.class) ;
     }
 
     @PostMapping
-    public void create(@RequestBody Candidate form) {
+    public void create(@RequestBody CandidateCreateForm form) {
         service.create(form);
     }
 

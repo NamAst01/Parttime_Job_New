@@ -1,6 +1,7 @@
 package com.vti.Part_time_Job.service;
 
 import com.vti.Part_time_Job.entity.Candidate;
+import com.vti.Part_time_Job.form.CandidateCreateForm;
 import com.vti.Part_time_Job.form.CandidateFilterForm;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,7 +13,7 @@ public interface ICandidateService {
 
     Candidate findById(Integer id);
 
-    void create(Candidate form);
+    void create(CandidateCreateForm form);
 
     void update(Candidate form);
 

@@ -2,9 +2,11 @@ package com.vti.Part_time_Job.service;
 
 
 import com.vti.Part_time_Job.entity.Candidate;
+import com.vti.Part_time_Job.form.CandidateCreateForm;
 import com.vti.Part_time_Job.form.CandidateFilterForm;
 import com.vti.Part_time_Job.repository.ICandidateRepository;
 import com.vti.Part_time_Job.specification.CandidateSpecification;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
 import org.springframework.data.domain.Page;
@@ -20,7 +22,8 @@ import java.util.List;
 public class CandidateService implements  ICandidateService {
     @Autowired
     private ICandidateRepository repository ;
-
+    @Autowired
+    private ModelMapper mapper ;
     @Override
     public Page<Candidate> findAll(CandidateFilterForm form, int pageNo, int pageSize, String sortBy, String sortDir){
         Specification<Candidate> spec = CandidateSpecification.buildSpec(form) ;
@@ -35,8 +38,9 @@ public class CandidateService implements  ICandidateService {
     }
 
     @Override
-    public void create(Candidate form) {
-        repository.save(form) ;
+    public void create(CandidateCreateForm form) {
+        Candidate candidate = mapper.map(form,Candidate.class) ;
+        repository.save(candidate) ;
     }
 
     @Override

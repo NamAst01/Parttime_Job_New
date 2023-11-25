@@ -1,0 +1,19 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(İÆÂ¬
+`
+java:S1128"CRemove this unused import 'com.vti.Part_time_Job.entity.Candidate'.(ÊÜ¸’8‹Åû—À1
+a
+java:S1128"DRemove this unused import 'com.vti.Part_time_Job.entity.JobHistory'.(üÊâÖ8¥ê„¯À1
+R
+java:S1128"0Remove this unused import 'jakarta.persistence'.(Î«Ô§úÿÿÿÿ8½†—À1
+W
+java:S1128"5Remove this unused import 'jakarta.validation.Valid'.(ÀãÅ”ûÿÿÿÿ8÷Ëı—À1
+j
+java:S1128
+"HRemove this unused import 'org.hibernate.annotations.CreationTimestamp'.(¡œøÀúÿÿÿÿ8ÅÂ„—À1
+[
+java:S1128">Remove this unused import 'org.hibernate.annotations.Formula'.(¦´åÙ8¡…—À1
+h
+java:S1128"FRemove this unused import 'org.hibernate.annotations.UpdateTimestamp'.(Ñµ¬Ûúÿÿÿÿ8ÅÂ„—À1
+V
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8¶ÿ›—À1

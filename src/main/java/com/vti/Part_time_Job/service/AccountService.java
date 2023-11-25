@@ -1,10 +1,15 @@
 package com.vti.Part_time_Job.service;
 
 
+import com.vti.Part_time_Job.controller.CandidateController;
 import com.vti.Part_time_Job.entity.Account;
+import com.vti.Part_time_Job.entity.Candidate;
+import com.vti.Part_time_Job.form.AccountCreateForm;
 import com.vti.Part_time_Job.form.AccountFilterForm;
 import com.vti.Part_time_Job.repository.IAccountRepository;
+import com.vti.Part_time_Job.repository.ICandidateRepository;
 import com.vti.Part_time_Job.specification.AccountSpecification;
+import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +17,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -19,6 +25,10 @@ import java.util.List;
 public class AccountService implements  IAccountService {
     @Autowired
     private IAccountRepository repository ;
+    @Autowired
+    private ICandidateRepository candidateRepository ;
+    @Autowired
+    private ModelMapper mapper ;
 
     @Override
     public Page<Account> findAll(AccountFilterForm form , int pageNo, int pageSize, String sortBy, String sortDir){
@@ -35,8 +45,20 @@ public class AccountService implements  IAccountService {
     }
 
     @Override
-    public void create(Account form) {
-        repository.save(form) ;
+    @Transactional
+    public void create(AccountCreateForm form) {
+
+        Account account= mapper.map(form, Account.class) ;
+//        Candidate candidate = mapper.map(form.getCandidate() , Candidate.class) ;
+        Candidate candidate = account.getCandidate();
+
+//        System.out.println(account.getCandidate().getPhone());
+        if (candidate != null ) {
+//            account.setCandidate(candidate);
+            candidate.setAccount(account);
+        }
+
+        repository.save(account) ;
     }
 
     @Override

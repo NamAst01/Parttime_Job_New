@@ -66,13 +66,13 @@ public class JobDetail {
     @JoinColumn(name = "employer_id",referencedColumnName = "id")
     private Employer employer ;
 
-    @OneToMany(mappedBy = "jobDetail")
+    @OneToMany(mappedBy = "jobDetail", cascade = CascadeType.ALL)
     private List<JobApplication> jobApplications ;
 
-    @OneToMany(mappedBy = "jobDetail")
+    @OneToMany(mappedBy = "jobDetail", cascade = CascadeType.ALL)
     private List<Report> reports ;
 
-    @OneToOne(mappedBy = "jobDetail")
+    @OneToOne(mappedBy = "jobDetail", cascade = CascadeType.ALL)
     private Comment comment ;
 
     public enum Status {

@@ -32,6 +32,7 @@ public class Candidate {
     @OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL )
     private List<JobHistory> jobHistoryList ;
 
-    @OneToOne(mappedBy = "candidate")
+    @OneToOne
+    @JoinColumn(name = "account_id")
     private Account account;
 }

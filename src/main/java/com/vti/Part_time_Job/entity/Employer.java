@@ -29,9 +29,9 @@ public class Employer {
     @Column(name = "image", nullable = true)
     private String image ;
 
-    @OneToOne(mappedBy = "employer")
+    @OneToOne(mappedBy = "employer", cascade = CascadeType.ALL)
     private Account account;
 
-    @OneToOne(mappedBy = "employer")
+    @OneToOne(mappedBy = "employer", cascade = CascadeType.ALL)
     private JobDetail jobDetail ;
 }

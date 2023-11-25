@@ -1,6 +1,8 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ð¿°ºûÿÿÿÿ8ÔêáÉ¾1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ð¿°ºûÿÿÿÿ8Õö‡˜À1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8ÞêáÉ¾1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Ýö‡˜À1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Ýö‡˜À1
 †
-java:S1128	"dRemove this unused import 'org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties'.(Ùæµ«ùÿÿÿÿ8˜«üÜ¾1
+java:S1128"dRemove this unused import 'org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties'.(Ùæµ«ùÿÿÿÿ8‹øº°À1

@@ -2,6 +2,7 @@ package com.vti.Part_time_Job.service;
 
 import com.vti.Part_time_Job.entity.Account;
 import com.vti.Part_time_Job.entity.Candidate;
+import com.vti.Part_time_Job.form.AccountCreateForm;
 import com.vti.Part_time_Job.form.AccountFilterForm;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,7 +14,7 @@ public interface IAccountService {
 
     Account findById(Integer id);
 
-    void create(Account form);
+    void create(AccountCreateForm form);
 
     void update(Account form);
 

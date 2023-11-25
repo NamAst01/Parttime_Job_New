@@ -1,4 +1,13 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ð¿°ºûÿÿÿÿ8À‡²É¾1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ð¿°ºûÿÿÿÿ8­Þî¯À1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Ï‡²É¾1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8·Þî¯À1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8·Þî¯À1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8·Þî¯À1
+X	java:S1254"<This block of commented-out lines of code should be removed.(Šëö’8¼Þî¯À1
+X	java:S1257"<This block of commented-out lines of code should be removed.(õù8þïô¯À1
+]	java:S1259"<This block of commented-out lines of code should be removed.(ôÁ»öûÿÿÿÿ8½Þî¯À1
+s
+java:S1128"QRemove this unused import 'com.vti.Part_time_Job.controller.CandidateController'.(¼Ñüýÿÿÿÿ8¾Þî¯À1

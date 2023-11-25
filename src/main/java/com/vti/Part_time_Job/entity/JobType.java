@@ -18,6 +18,6 @@ public class JobType {
     @Column(name = "name")
     private String name ;
 
-    @OneToMany(mappedBy = "jobType")
+    @OneToMany(mappedBy = "jobType", cascade = CascadeType.ALL)
     private List<JobDetail> jobDetails ;
 }

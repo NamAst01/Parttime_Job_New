@@ -7,4 +7,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 public interface ICandidateRepository  extends JpaRepository<Candidate, Integer>, JpaSpecificationExecutor<Candidate> {
 
+    Candidate findCandidateByPhone(String phone) ;
+
 }
