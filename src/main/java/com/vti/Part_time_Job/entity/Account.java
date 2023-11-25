@@ -54,8 +54,7 @@ public class Account {
     @OneToOne(mappedBy = "account",cascade = CascadeType.ALL)
     private Candidate candidate;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "employer_id", referencedColumnName = "id")
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL)
     private Employer employer;
 
     @OneToMany(mappedBy = "account")

@@ -1,0 +1,8 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ò¾İÉùÿÿÿÿ
+H
+java:S2160"+Override the "equals" method in this class.(ºÛÔš8û¦İ¹À1
+c
+java:S1128"ARemove this unused import 'com.vti.Part_time_Job.entity.Account'.(„âšşÿÿÿÿ8§ß¹À1
+R
+java:S1128"0Remove this unused import 'jakarta.persistence'.(Î«Ô§úÿÿÿÿ8§ß¹À1

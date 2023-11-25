@@ -30,10 +30,6 @@ public class AccountController {
                                     @RequestParam(value = "sortDir", defaultValue = "asc", required = false) String sortDir
             ) {
         Page<Account> accounts = service.findAll(form, pageNo, pageSize, sortBy, sortDir);
-//        accounts.map(account -> {
-//            System.out.println(account.getCandidate().getJobHistoryList()) ;
-//            return null;
-//        });
         return accounts.map(account -> mapper.map(account, AccountDto.class) .withSelfRel());
     }
 

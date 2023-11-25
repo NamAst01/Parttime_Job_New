@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.*;
+
 @Getter
 @Setter
 @Entity
@@ -29,9 +31,10 @@ public class Employer {
     @Column(name = "image", nullable = true)
     private String image ;
 
-    @OneToOne(mappedBy = "employer", cascade = CascadeType.ALL)
+    @OneToOne
+    @JoinColumn(name = "account_id", referencedColumnName = "id")
     private Account account;
 
-    @OneToOne(mappedBy = "employer", cascade = CascadeType.ALL)
-    private JobDetail jobDetail ;
+    @OneToMany(mappedBy = "employer", cascade = CascadeType.ALL)
+    private List<JobDetail> jobDetails ;
 }

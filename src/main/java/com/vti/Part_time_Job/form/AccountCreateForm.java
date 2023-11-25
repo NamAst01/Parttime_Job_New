@@ -2,6 +2,7 @@ package com.vti.Part_time_Job.form;
 
 import com.vti.Part_time_Job.entity.Account;
 import com.vti.Part_time_Job.entity.Candidate;
+import com.vti.Part_time_Job.entity.JobDetail;
 import com.vti.Part_time_Job.entity.JobHistory;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
@@ -26,6 +27,8 @@ public class AccountCreateForm {
     private List<Account.Role> roles;
     private Account.Status status ;
     private CandidateCreateForm candidate ;
+    private EmployerCreateFrom employer ;
+
 
     @Getter
     @Setter
@@ -34,6 +37,16 @@ public class AccountCreateForm {
         private LocalDate dob ;
         private String address ;
         private String image ;
+    }
+    @Getter
+    @Setter
+    public class EmployerCreateFrom {
+        private String company ;
+        private String emailCompany ;
+        private String phoneCompany ;
+        private String position ;
+        private String image ;
+        private List<JobDetail> jobDetails ;
     }
 
 }

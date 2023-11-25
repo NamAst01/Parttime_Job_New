@@ -2,10 +2,13 @@ package com.vti.Part_time_Job.service;
 
 
 import com.vti.Part_time_Job.entity.Employer;
+import com.vti.Part_time_Job.form.EmployerCreateFrom;
 import com.vti.Part_time_Job.form.EmployerFilterForm;
+import com.vti.Part_time_Job.form.EmployerUpdateForm;
 import com.vti.Part_time_Job.repository.IEmployerRepository;
 import com.vti.Part_time_Job.specification.CandidateSpecification;
 import com.vti.Part_time_Job.specification.EmployerSpecification;
+import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Sort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -20,6 +23,8 @@ import java.util.List;
 public class EmployerService implements  IEmployerService {
     @Autowired
     private IEmployerRepository repository ;
+    @Autowired
+    ModelMapper mapper ;
 
     @Override
     public Page<Employer> findAll(EmployerFilterForm form , int pageSize , int pageNo ,String sortBy, String sortDir ){
@@ -35,13 +40,15 @@ public class EmployerService implements  IEmployerService {
     }
 
     @Override
-    public void create(Employer form) {
-        repository.save(form) ;
+    public void create(EmployerCreateFrom form) {
+        Employer employer = mapper.map(form,Employer.class) ;
+        repository.save(employer) ;
     }
 
     @Override
-    public void update(Employer form) {
-        repository.save(form) ;
+    public void update(EmployerUpdateForm form) {
+        Employer employer = mapper.map(form,Employer.class) ;
+        repository.save(employer) ;
     }
 
     @Override

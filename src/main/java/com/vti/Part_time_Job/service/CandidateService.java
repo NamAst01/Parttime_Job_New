@@ -4,6 +4,7 @@ package com.vti.Part_time_Job.service;
 import com.vti.Part_time_Job.entity.Candidate;
 import com.vti.Part_time_Job.form.CandidateCreateForm;
 import com.vti.Part_time_Job.form.CandidateFilterForm;
+import com.vti.Part_time_Job.form.CandidateUpdateForm;
 import com.vti.Part_time_Job.repository.ICandidateRepository;
 import com.vti.Part_time_Job.specification.CandidateSpecification;
 import org.modelmapper.ModelMapper;
@@ -44,8 +45,9 @@ public class CandidateService implements  ICandidateService {
     }
 
     @Override
-    public void update(Candidate form) {
-        repository.save(form) ;
+    public void update(CandidateUpdateForm form) {
+        Candidate candidate = mapper.map(form,Candidate.class) ;
+        repository.save(candidate) ;
     }
 
     @Override

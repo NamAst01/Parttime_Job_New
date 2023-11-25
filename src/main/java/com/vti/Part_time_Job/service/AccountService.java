@@ -4,6 +4,7 @@ package com.vti.Part_time_Job.service;
 import com.vti.Part_time_Job.controller.CandidateController;
 import com.vti.Part_time_Job.entity.Account;
 import com.vti.Part_time_Job.entity.Candidate;
+import com.vti.Part_time_Job.entity.Employer;
 import com.vti.Part_time_Job.form.AccountCreateForm;
 import com.vti.Part_time_Job.form.AccountFilterForm;
 import com.vti.Part_time_Job.repository.IAccountRepository;
@@ -49,13 +50,14 @@ public class AccountService implements  IAccountService {
     public void create(AccountCreateForm form) {
 
         Account account= mapper.map(form, Account.class) ;
-//        Candidate candidate = mapper.map(form.getCandidate() , Candidate.class) ;
         Candidate candidate = account.getCandidate();
+        Employer employer = account.getEmployer() ;
 
-//        System.out.println(account.getCandidate().getPhone());
         if (candidate != null ) {
-//            account.setCandidate(candidate);
             candidate.setAccount(account);
+        }
+        if (employer != null ) {
+            employer.setAccount(account);
         }
 
         repository.save(account) ;

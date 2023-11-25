@@ -4,6 +4,7 @@ import com.vti.Part_time_Job.dto.CandidateDto;
 import com.vti.Part_time_Job.entity.Candidate;
 import com.vti.Part_time_Job.form.CandidateCreateForm;
 import com.vti.Part_time_Job.form.CandidateFilterForm;
+import com.vti.Part_time_Job.form.CandidateUpdateForm;
 import com.vti.Part_time_Job.service.ICandidateService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,7 @@ public class CandidateController  {
 
 
     @PutMapping("/{id}")
-    public void update(@PathVariable("id") Integer id, @RequestBody Candidate form) {
+    public void update(@PathVariable("id") Integer id, @RequestBody CandidateUpdateForm form) {
         form.setId(id);
         service.update(form);
     }

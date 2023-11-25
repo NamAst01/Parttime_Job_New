@@ -86,3 +86,11 @@ o
 ?src/main/java/com/vti/Part_time_Job/form/AccountCreateForm.java,e/7/e7e20a2efde730bc321485779c581f76ea2db9f1
 q
 Asrc/main/java/com/vti/Part_time_Job/form/CandidateCreateForm.java,8/e/8ee4eb3d405976a94b8705c28b2e33beedae100e
+q
+Asrc/main/java/com/vti/Part_time_Job/form/CandidateUpdateForm.java,f/b/fbab48c74ad0df1024bf416d3ffd535a2e0996ac
+p
+@src/main/java/com/vti/Part_time_Job/form/EmployerCreateFrom.java,4/4/44ddd74935e8f1d9c95a5efd5490d9275d457c29
+p
+@src/main/java/com/vti/Part_time_Job/form/EmployerUpdateForm.java,6/4/643bd2749ac1aef379f66f60483a511e8b68b937
+h
+8src/main/java/com/vti/Part_time_Job/dto/EmployerDto.java,6/9/6917a892521388e8c8ee53c31c682ec6767c1d63

@@ -33,6 +33,6 @@ public class Candidate {
     private List<JobHistory> jobHistoryList ;
 
     @OneToOne
-    @JoinColumn(name = "account_id")
+    @JoinColumn(name = "account_id",referencedColumnName = "id")
     private Account account;
 }

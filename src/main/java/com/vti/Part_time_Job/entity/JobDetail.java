@@ -62,7 +62,7 @@ public class JobDetail {
     @JoinColumn(name = "job_type_id" , referencedColumnName = "id")
     private JobType jobType ;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "employer_id",referencedColumnName = "id")
     private Employer employer ;
 
