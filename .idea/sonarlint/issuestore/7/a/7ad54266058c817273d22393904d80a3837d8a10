@@ -1,0 +1,14 @@
+
+o
+java:S1192E"SDefine a constant instead of duplicating this literal "api/v1/accounts/**" 4 times.(®‡—8÷«îğÁ1
+w
+java:S1192G"UDefine a constant instead of duplicating this literal "/api/v1/employers/**" 3 times.(ÚÛÜµÿÿÿÿÿ8úõğÁ1
+x
+java:S1192G"VDefine a constant instead of duplicating this literal "/api/v1/candidates/**" 3 times.(ÚÛÜµÿÿÿÿÿ8úõğÁ1
+h
+java:S1192F"FDefine a constant instead of duplicating this literal "ADMIN" 4 times.(ÈË–ıÿÿÿÿ8÷«îğÁ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¸êôâşÿÿÿÿ8ø«îğÁ1
+j
+java:S5738,"HRemove this call to a deprecated method, it has been marked for removal.(Åúßµûÿÿÿÿ8ƒ¬îğÁ1
+Y
+java:S1128"7Remove this unused import 'org.hibernate.mapping.List'.(à¼üßøÿÿÿÿ8Œ¬îğÁ1

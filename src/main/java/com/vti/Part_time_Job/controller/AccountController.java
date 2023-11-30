@@ -5,13 +5,16 @@ import com.vti.Part_time_Job.entity.Account;
 import com.vti.Part_time_Job.form.AccountCreateForm;
 import com.vti.Part_time_Job.form.AccountFilterForm;
 import com.vti.Part_time_Job.service.IAccountService;
-
+import com.vti.Part_time_Job.validation.AccountIdExist;
+import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+@Validated
 @RestController
 @RequestMapping("/api/v1/accounts")
 public class AccountController {
@@ -34,19 +37,19 @@ public class AccountController {
     }
 
     @GetMapping("/{id}")
-    public AccountDto findById(@PathVariable("id") Integer id) {
+    public AccountDto findById(@PathVariable("id")  @AccountIdExist Integer id) {
         return mapper.map(service.findById(id), AccountDto.class)
                 .withSelfRel();
     }
 
     @PostMapping
-    public void create(@RequestBody AccountCreateForm form) {
+    public void create(@RequestBody @Valid AccountCreateForm form) {
         service.create(form);
     }
 
 
     @PutMapping("/{id}")
-    public void update(@PathVariable("id") Integer id, @RequestBody Account form) {
+    public void update(@PathVariable("id") @AccountIdExist Integer id, @RequestBody Account form) {
         form.setId(id);
         service.update(form);
     }

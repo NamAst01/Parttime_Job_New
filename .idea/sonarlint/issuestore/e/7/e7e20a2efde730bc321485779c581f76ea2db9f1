@@ -1,18 +1,19 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(İÆÂ¬
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(İÆÂ¬8õè°èÁ1
+]	java:S125"<This block of commented-out lines of code should be removed.(ó¶çÏıÿÿÿÿ8À§æéÁ1
 `
-java:S1128"CRemove this unused import 'com.vti.Part_time_Job.entity.Candidate'.(ÊÜ¸’8âÍ×¹À1
+java:S1128"CRemove this unused import 'com.vti.Part_time_Job.entity.Candidate'.(ÊÜ¸’8æ“ğéÁ1
 a
-java:S1128"DRemove this unused import 'com.vti.Part_time_Job.entity.JobHistory'.(üÊâÖ8âÍ×¹À1
+java:S1128"DRemove this unused import 'com.vti.Part_time_Job.entity.JobHistory'.(üÊâÖ8æ“ğéÁ1
 R
-java:S1128"0Remove this unused import 'jakarta.persistence'.(Î«Ô§úÿÿÿÿ8ãÍ×¹À1
-W
-java:S1128"5Remove this unused import 'jakarta.validation.Valid'.(ÀãÅ”ûÿÿÿÿ8ãÍ×¹À1
+java:S1128	"0Remove this unused import 'jakarta.persistence'.(Î«Ô§úÿÿÿÿ8ç“ğéÁ1
+e
+java:S1128"CRemove this unused import 'jakarta.validation.constraints.NotNull'.(Àª•ıÿÿÿÿ8ç“ğéÁ1
 j
-java:S1128"HRemove this unused import 'org.hibernate.annotations.CreationTimestamp'.(¡œøÀúÿÿÿÿ8ãÍ×¹À1
+java:S1128"HRemove this unused import 'org.hibernate.annotations.CreationTimestamp'.(¡œøÀúÿÿÿÿ8ç“ğéÁ1
 [
-java:S1128">Remove this unused import 'org.hibernate.annotations.Formula'.(¦´åÙ8ãÍ×¹À1
+java:S1128">Remove this unused import 'org.hibernate.annotations.Formula'.(¦´åÙ8ç“ğéÁ1
 h
-java:S1128"FRemove this unused import 'org.hibernate.annotations.UpdateTimestamp'.(Ñµ¬Ûúÿÿÿÿ8ãÍ×¹À1
+java:S1128"FRemove this unused import 'org.hibernate.annotations.UpdateTimestamp'.(Ñµ¬Ûúÿÿÿÿ8ç“ğéÁ1
 V
-java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8ãÍ×¹À1
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8ç“ğéÁ1

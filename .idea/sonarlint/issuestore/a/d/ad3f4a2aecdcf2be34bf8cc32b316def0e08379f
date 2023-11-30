@@ -1,0 +1,9 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŒïÜ¤ıÿÿÿÿ8Ó±ÜïÁ1
+_
+java:S6813("BRemove this field injection and use constructor injection instead.(êæÄŞ8è±ÜïÁ1
+]	java:S125_"<This block of commented-out lines of code should be removed.(ˆÚåøÿÿÿÿ8ï±ÜïÁ1
+|
+java:S6201‘"^Replace this instanceof check and cast with 'instanceof MethodArgumentTypeMismatchException e'(½ŸÅ‰8ü±ÜïÁ1
+W
+java:S1128"":Remove this unused import 'java.util.logging.FileHandler'.(—­—å8™²ÜïÁ1

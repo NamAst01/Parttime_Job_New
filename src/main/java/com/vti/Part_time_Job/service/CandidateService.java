@@ -16,6 +16,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -39,6 +40,7 @@ public class CandidateService implements  ICandidateService {
     }
 
     @Override
+    @Transactional
     public void create(CandidateCreateForm form) {
         Candidate candidate = mapper.map(form,Candidate.class) ;
         repository.save(candidate) ;
